@@ -8,4 +8,4 @@ preamble:
 	@echo The base image is $(FROM)
 
 build: preamble 
-	docker build -t devwrapper_$(FROM) --build-arg from=$(FROM) .
+	docker build -t $(FROM)_vimdbg --build-arg from=$(FROM) .
