@@ -1,5 +1,7 @@
 FROM?=ubuntu:18.04
 
+SUFFIX?=_vimdbg
+
 all: build
 
 #TODO: Need to error out for non-debian based containers.
@@ -8,4 +10,4 @@ preamble:
 	@echo The base image is $(FROM)
 
 build: preamble 
-	docker build -t $(FROM)_vimdbg --build-arg from=$(FROM) .
+	docker build -t $(FROM)$(SUFFIX) --network=host --build-arg from=$(FROM) .
