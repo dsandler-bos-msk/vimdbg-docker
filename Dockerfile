@@ -6,7 +6,7 @@ RUN apt-get update && \
     apt-get install -y --no-install-recommends \
     gdb less \
     # tmux \ # Later
-    build-essential gettext libtinfo-dev ca-certificates git \
+    build-essential gettext libtinfo-dev ca-certificates git libx11-dev libxt-dev \
     && \
     rm -rf /var/lib/apt/lists/* && \
     apt-get clean -y --no-install-recommends && \
