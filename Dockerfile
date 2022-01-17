@@ -21,8 +21,8 @@ RUN cd /usr/src && \
     make install && \
     rm -rf /usr/src/vim
 
-# TODO: Add ARG to allow copying .vimrc and .bash_aliases and .tmux.conf
-# COPY .vimrc .tmux.conf .bash_aliases /root/
+COPY .vimrc /root/
+# COPY .bash_aliases /root/
 RUN  echo 'vimgdb () { vim  -c "TermdebugCommand $*" ; }' >> /root/.bash_aliases && \
      echo 'alias vimdbg="vimgdb"' >> /root/.bash_aliases && \
      echo "alias tmux='tmux -u'" >> /root/.bash_aliases && \
